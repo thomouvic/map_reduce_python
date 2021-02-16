@@ -17,7 +17,8 @@ current_key = None
 current_list = []
 
 for line in sys.stdin:
-    key, value = line.split()
+    key, value = line.split('\t', 1)
+    value = value.strip()
 
     if current_key == key:
         current_list += value
@@ -30,6 +31,3 @@ for line in sys.stdin:
 # don't forget the last key!
 if current_key == key:
     reducer(current_key,current_list)
-
-
-
