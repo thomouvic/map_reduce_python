@@ -5,7 +5,7 @@ def emit(key, value):
   print('%s\t%s' % (key, value))
 
 def mapper(key, line):
-    words = line.split()
+    words = line.split() # split using all occurrences of whitespace
     for w in words:
         emit(w, 1)  
 
@@ -15,3 +15,4 @@ import sys
 
 for line in sys.stdin:
   mapper(None, line)
+
